@@ -1,0 +1,350 @@
+{
+  "users": [
+    {
+      "id": "c19f17a0-bd55-4b4d-9e9f-73f4b062a4b6",
+      "username": "John",
+      "email": "johncena@gmail.com",
+      "password": "12345678",
+      "hasVoted": false,
+      "votedRecipes": [],
+      "avatarImage": ""
+    },
+    {
+      "id": "a4c62ad8-eef1-476e-9487-fcb4dd27312d",
+      "username": "Stella",
+      "email": "stella6gomez@yahoo.de",
+      "password": "43215678",
+      "hasVoted": true,
+      "votedRecipes": [
+        {
+          "recipeId": "11",
+          "voteType": "like"
+        }
+      ],
+      "avatarImage": ""
+    },
+    {
+      "id": "d7f93525-5e7e-4dac-989b-895176445df8",
+      "username": "Ramtin62",
+      "email": "test@test.com",
+      "password": "87654321",
+      "hasVoted": true,
+      "votedRecipes": [
+        {
+          "recipeId": "11",
+          "voteType": "like"
+        },
+        {
+          "recipeId": "9",
+          "voteType": "dislike"
+        },
+        {
+          "recipeId": "14",
+          "voteType": "like"
+        }
+      ],
+      "avatarImage": ""
+    },
+    {
+      "id": "61a917b4-4e1e-4723-bcad-a4bf3c06a187",
+      "username": "Koruosh",
+      "email": "koroush@t-online.com",
+      "password": "12345678",
+      "hasVoted": true,
+      "votedRecipes": [
+        {
+          "recipeId": "3",
+          "voteType": "dislike"
+        },
+        {
+          "recipeId": "9",
+          "voteType": "like"
+        }
+      ],
+      "avatarImage": ""
+    }
+  ],
+  "share-recipes": [
+    {
+      "id": "1",
+      "recipeId": "14",
+      "sharedBy": "61a917b4-4e1e-4723-bcad-a4bf3c06a187",
+      "message": "Try this. You'll love it",
+      "sharedWith": "stella6gomez@yahoo.de",
+      "relation": "friend",
+      "sharedAt": "2025-02-26T12:15:00Z"
+    },
+    {
+      "id": "2459",
+      "recipeId": "1",
+      "sharedBy": "61a917b4-4e1e-4723-bcad-a4bf3c06a187",
+      "message": "It's special",
+      "sharedWith": "test@test.com",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T10:26:54.087Z"
+    },
+    {
+      "id": "4277",
+      "recipeId": "3",
+      "sharedBy": "61a917b4-4e1e-4723-bcad-a4bf3c06a187",
+      "message": "Das schmeckt mir",
+      "sharedWith": "johncena@gmail.com",
+      "relation": "family",
+      "sharedAt": "2025-06-11T10:27:49.878Z"
+    },
+    {
+      "id": "7b86",
+      "recipeId": "2",
+      "sharedBy": "c19f17a0-bd55-4b4d-9e9f-73f4b062a4b6",
+      "message": "It may taste good, who knows!",
+      "sharedWith": "stella6gomez@yahoo.de",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T10:29:01.568Z"
+    },
+    {
+      "id": "181b",
+      "recipeId": "15",
+      "sharedBy": "c19f17a0-bd55-4b4d-9e9f-73f4b062a4b6",
+      "message": "It's a pizza after all!",
+      "sharedWith": "test@test.com",
+      "relation": "friend",
+      "sharedAt": "2025-06-11T10:30:08.748Z"
+    },
+    {
+      "id": "46cf",
+      "recipeId": "7",
+      "sharedBy": "c19f17a0-bd55-4b4d-9e9f-73f4b062a4b6",
+      "message": "I've heard you caught cold, be healthy again",
+      "sharedWith": "kourosh@t-online.com",
+      "relation": "friend",
+      "sharedAt": "2025-06-11T10:32:56.004Z"
+    },
+    {
+      "id": "23e3",
+      "recipeId": "4",
+      "sharedBy": "a4c62ad8-eef1-476e-9487-fcb4dd27312d",
+      "message": "let's frühstücken together",
+      "sharedWith": "test@test.com",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T10:34:19.057Z"
+    },
+    {
+      "id": "ce10",
+      "recipeId": "5",
+      "sharedBy": "a4c62ad8-eef1-476e-9487-fcb4dd27312d",
+      "message": "you're a veggi, aren't you?!",
+      "sharedWith": "kourosh@t-online.com",
+      "relation": "family",
+      "sharedAt": "2025-06-11T10:35:05.610Z"
+    },
+    {
+      "id": "e134",
+      "recipeId": "14",
+      "sharedBy": "a4c62ad8-eef1-476e-9487-fcb4dd27312d",
+      "message": "A little birdie told me you like banana😁",
+      "sharedWith": "johncena@gmail.com",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T10:36:10.366Z"
+    },
+    {
+      "id": "ad2a",
+      "recipeId": "10",
+      "sharedBy": "d7f93525-5e7e-4dac-989b-895176445df8",
+      "message": "How does it feel to eat some God's lettuce :))",
+      "sharedWith": "stella6gomez@yahoo.de",
+      "relation": "friend",
+      "sharedAt": "2025-06-11T10:39:32.883Z"
+    },
+    {
+      "id": "e4e0",
+      "recipeId": "12",
+      "sharedBy": "d7f93525-5e7e-4dac-989b-895176445df8",
+      "message": "Working with Mac and eat a mac",
+      "sharedWith": "kourosh@t-online.com",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T10:40:16.798Z"
+    },
+    {
+      "id": "3607",
+      "recipeId": "12",
+      "sharedBy": "d7f93525-5e7e-4dac-989b-895176445df8",
+      "message": "your Lieblingsspeise is cheese, there you have it",
+      "sharedWith": "johncena@gmail.com",
+      "relation": "coworker",
+      "sharedAt": "2025-06-11T11:06:25.586Z"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "1",
+      "name": "Spaghetti Bolognese",
+      "ingredients": ["spaghetti", "ground beef", "tomato sauce"],
+      "instructions": "Boil pasta, cook beef, mix with sauce.",
+      "diet": "non-vegetarian",
+      "prepTime": 25,
+      "popularity": 120,
+      "createdAt": "2025-05-24T10:30:00Z",
+      "image": "/foods/Spaghetti-Bolognese.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Chicken Alfredo",
+      "ingredients": ["fettuccine", "chicken breast", "cream", "parmesan"],
+      "instructions": "Cook pasta and chicken, mix with cream and cheese.",
+      "diet": "non-vegetarian",
+      "prepTime": 30,
+      "popularity": 128,
+      "createdAt": "2025-05-23T11:00:00Z",
+      "image": "/foods/Chicken-Alfredo.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Avocado Toast",
+      "ingredients": ["bread", "avocado", "lemon", "chili flakes"],
+      "instructions": "Toast bread, mash avocado with lemon, spread and top with chili.",
+      "diet": "vegetarian",
+      "prepTime": 10,
+      "popularity": 122,
+      "createdAt": "2025-05-22T11:30:00Z",
+      "image": "/foods/Avocado-Toast.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Pancakes",
+      "ingredients": ["flour", "milk", "egg", "baking powder"],
+      "instructions": "Mix ingredients, cook on skillet until golden.",
+      "diet": "vegetarian",
+      "prepTime": 20,
+      "popularity": 78,
+      "createdAt": "2025-05-21T12:00:00Z",
+      "image": "/foods/Pancakes.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Tuna Salad",
+      "ingredients": ["tuna", "mayonnaise", "celery", "onion"],
+      "instructions": "Mix all ingredients and chill before serving.",
+      "diet": "non-vegetarian",
+      "prepTime": 15,
+      "popularity": 105,
+      "createdAt": "2025-05-20T12:30:00Z",
+      "image": "/foods/Tuna-Salad.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Beef Tacos",
+      "ingredients": [
+        "taco shells",
+        "ground beef",
+        "lettuce",
+        "cheese",
+        "salsa"
+      ],
+      "instructions": "Cook beef, fill shells with toppings.",
+      "diet": "non-vegetarian",
+      "prepTime": 25,
+      "popularity": 82,
+      "createdAt": "2025-05-19T13:00:00Z",
+      "image": "/foods/Beef-Taco.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Tomato Soup",
+      "ingredients": ["tomatoes", "onion", "garlic", "vegetable broth"],
+      "instructions": "Simmer ingredients, blend until smooth.",
+      "diet": "vegetarian",
+      "prepTime": 30,
+      "popularity": 148,
+      "createdAt": "2025-05-18T13:30:00Z",
+      "image": "/foods/Tomato-Soup.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Grilled Cheese",
+      "ingredients": ["bread", "cheddar cheese", "butter"],
+      "instructions": "Butter bread, grill with cheese until melted.",
+      "diet": "vegetarian",
+      "prepTime": 10,
+      "popularity": 141,
+      "createdAt": "2025-05-17T14:00:00Z",
+      "image": "/foods/Grilled-Cheese.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Omelette",
+      "ingredients": ["eggs", "milk", "cheese", "vegetables"],
+      "instructions": "Beat eggs, pour into pan, add fillings, fold and cook.",
+      "diet": "non-vegetarian",
+      "prepTime": 15,
+      "popularity": 138,
+      "createdAt": "2025-05-16T14:30:00Z",
+      "image": "/foods/Omelette.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Greek Salad",
+      "ingredients": ["cucumber", "tomatoes", "feta", "olives", "onion"],
+      "instructions": "Chop and toss all ingredients with olive oil.",
+      "diet": "vegetarian",
+      "prepTime": 10,
+      "popularity": 131,
+      "createdAt": "2025-05-15T15:00:00Z",
+      "image": "/foods/Greek-Salad.jpg"
+    },
+    {
+      "id": "11",
+      "name": "French Toast",
+      "ingredients": ["bread", "eggs", "milk", "cinnamon"],
+      "instructions": "Dip bread in egg mix, fry until golden.",
+      "diet": "vegetarian",
+      "prepTime": 15,
+      "popularity": 104,
+      "createdAt": "2025-05-14T15:30:00Z",
+      "image": "/foods/French-Toast.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Mac and Cheese",
+      "ingredients": ["macaroni", "cheddar", "milk", "butter"],
+      "instructions": "Cook pasta, make cheese sauce, mix and bake.",
+      "diet": "vegetarian",
+      "prepTime": 30,
+      "popularity": 82,
+      "createdAt": "2025-05-14T16:00:00Z",
+      "image": "/foods/Mac-and-Cheese.jpg"
+    },
+    {
+      "id": "13",
+      "name": "Veggie Stir Fry",
+      "ingredients": ["broccoli", "carrots", "bell peppers", "soy sauce"],
+      "instructions": "Stir-fry veggies, add sauce and serve over rice.",
+      "diet": "vegetarian",
+      "prepTime": 20,
+      "popularity": 124,
+      "createdAt": "2025-05-15T16:30:00Z",
+      "image": "/foods/Veggie-Stir-Fry.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Banana Smoothie",
+      "ingredients": ["banana", "milk", "honey", "ice"],
+      "instructions": "Blend all ingredients until smooth.",
+      "diet": "vegetarian",
+      "prepTime": 5,
+      "popularity": 86,
+      "createdAt": "2025-05-16T17:00:00Z",
+      "image": "/foods/Banana-Smoothie.jpg"
+    },
+    {
+      "id": "15",
+      "name": "BBQ Chicken Pizza",
+      "ingredients": ["pizza dough", "bbq sauce", "chicken", "mozzarella"],
+      "instructions": "Spread sauce on dough, top with chicken and cheese, bake.",
+      "diet": "non-vegetarian",
+      "prepTime": 35,
+      "popularity": 104,
+      "createdAt": "2025-05-17T17:30:00Z",
+      "image": "/foods/BBQ-Chicken-Pizza.jpg"
+    }
+  ]
+}
