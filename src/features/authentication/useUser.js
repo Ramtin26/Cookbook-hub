@@ -10,6 +10,5 @@ export function useUser() {
     isLoading,
     user,
     isAuthenticated: Boolean(user),
-    // isAuthenticated: user?.role === "authenticated",
   };
 }

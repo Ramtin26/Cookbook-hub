@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useUser } from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
 
-import { fileToBase64 } from "../../utils/helpers";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
+import { fileToBase64 } from "../../utils/helpers";
 
 function UpdateUserDataForm() {
   const { user, isLoading } = useUser();
@@ -54,8 +54,8 @@ function UpdateUserDataForm() {
     setAvatar(null);
   }
 
-  console.log("avatar:", avatar);
-  console.log("type:", typeof avatar);
+  // console.log("avatar:", avatar);
+  // console.log("type:", typeof avatar);
 
   return (
     <Form onSubmit={handleSubmit}>

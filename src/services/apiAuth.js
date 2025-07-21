@@ -1,9 +1,9 @@
 import { wait } from "../utils/helpers";
 
-const URL_API_USERS = "http://localhost:3001/users";
+const API_URL_USERS = "http://localhost:3001/users";
 
 export async function signup(userData) {
-  const res = await fetch(URL_API_USERS, {
+  const res = await fetch(API_URL_USERS, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function signup(userData) {
 
 export async function login({ email, password }) {
   await wait(300);
-  const res = await fetch(`${URL_API_USERS}?email=${email}`);
+  const res = await fetch(`${API_URL_USERS}?email=${email}`);
 
   if (!res.ok) throw new Error("Failed to fetch user");
 
@@ -49,6 +49,15 @@ export async function getCurrentUser() {
   return user;
 }
 
+export async function getUserFromServer(id) {
+  const res = await fetch(`${API_URL_USERS}/${id}`);
+  if (!res.ok) throw new Error("Failed to fetch user from server");
+
+  const user = await res.json();
+  localStorage.setItem("user", JSON.stringify(user));
+  return user;
+}
+
 export async function logout() {
   await wait(300);
   localStorage.removeItem("user");
@@ -68,7 +77,7 @@ export async function updateCurrentUser({ password, fullName, avatar }) {
   if (fullName) updatedFields.username = fullName;
   if (avatar) updatedFields.avatarImage = avatar;
 
-  const res = await fetch(`${URL_API_USERS}/${currentUser.id}`, {
+  const res = await fetch(`${API_URL_USERS}/${currentUser.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -83,4 +92,22 @@ export async function updateCurrentUser({ password, fullName, avatar }) {
   localStorage.setItem("user", JSON.stringify(updatedUser));
 
   return { user: updatedUser };
+}
+
+export async function getUsersByIds(ids) {
+  const res = await fetch(API_URL_USERS);
+
+  if (!res.ok) throw new Error("User could not be found");
+
+  const data = await res.json();
+
+  return data.filter((item) => ids.includes(String(item.id)));
+}
+
+export async function getAllUsers() {
+  const res = await fetch(API_URL_USERS);
+
+  if (!res.ok) throw new Error("Users couldn't be found");
+
+  return await res.json();
 }

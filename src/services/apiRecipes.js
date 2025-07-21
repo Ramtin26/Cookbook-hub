@@ -39,6 +39,7 @@ export async function getRecipes({
 
 export async function getAllRecipes() {
   const res = await fetch(API_URL_RECIPES);
+
   if (!res.ok) throw new Error("Could not fetch all recipes");
 
   return await res.json();
@@ -52,8 +53,19 @@ export async function getRecipe(id) {
   return await res.json();
 }
 
+export async function getRecipesbyIds(ids) {
+  const res = await fetch(API_URL_RECIPES);
+
+  if (!res.ok) throw new Error("Recipes not found");
+
+  const data = await res.json();
+
+  return data.filter((recipe) => ids.includes(String(recipe.id)));
+}
+
 export async function createEditRecipe(newRecipe, id) {
   await wait(700);
+
   const options = {
     method: id ? "PATCH" : "POST",
     headers: {

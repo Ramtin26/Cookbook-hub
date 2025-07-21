@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
+import RecipeDataBox from "./RecipeDataBox";
 import { useDeleteRecipe } from "./useDeleteRecipe";
 import { useRecipe } from "./useRecipe";
-import RecipeDataBox from "./RecipeDataBox";
-import { useMoveBack } from "../../hooks/useMoveBack";
 
+import { useMoveBack } from "../../hooks/useMoveBack";
 import Button from "../../ui/Button";
 import ButtonGroup from "../../ui/ButtonGroup";
 import ConfirmDelete from "../../ui/ConfirmDelete";
@@ -40,7 +40,7 @@ function RecipeDetail() {
   };
 
   const isPopular = popularity >= 100;
-  const popularityTag = isPopular ? "indigoIsh" : "grey";
+  const popularityTag = isPopular ? "indigoish" : "grey";
   const popularityLabel = isPopular
     ? `Popular (${popularity})`
     : `Unpopular (${popularity})`;

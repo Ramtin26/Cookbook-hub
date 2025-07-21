@@ -1,9 +1,10 @@
+import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { BiSolidDislike, BiSolidLike } from "react-icons/bi";
 import { useVoteRecipe } from "./useVoteRecipe";
+
 import { useUser } from "../authentication/useUser";
 import { useRecipe } from "../recipes/useRecipe";
-
 import Button from "../../ui/Button";
 import ButtonIcon from "../../ui/ButtonIcon";
 import Spinner from "../../ui/Spinner";
@@ -88,7 +89,13 @@ const VoteButtonList = styled.ul`
   }
 `;
 
+const VoteMessage = styled.span`
+  font-size: 1.5rem;
+  font-weight: 500;
+`;
+
 function VoteRecipes() {
+  const [userVoteType, setUserVoteType] = useState(null);
   const [searchParams] = useSearchParams();
   const recipeId = searchParams.get("recipeId");
 
@@ -98,22 +105,30 @@ function VoteRecipes() {
   const { user } = useUser();
   const { vote, isPending } = useVoteRecipe();
 
+  useEffect(
+    function () {
+      if (user?.votedRecipes) {
+        const existingVote = user.votedRecipes.find(
+          (v) => v.recipeId === recipeId
+        );
+        if (existingVote) {
+          setUserVoteType(existingVote.voteType);
+        }
+      }
+    },
+    [user, recipeId]
+  );
+
   if (isLoading) return <Spinner />;
   if (!user || !recipe) return null;
 
   const { name, diet, popularity, image } = recipe;
 
-  const hasAlreadyVoted = user.votedRecipes?.some(
-    (v) => v.recipeId === recipeId
-  );
-
   const handleVote = (voteType) => {
     if (isPending) return;
 
-    // if (hasAlreadyVoted) {
-    //   toast.error("You've already voted for this recipe.");
-    //   return;
-    // }
+    setUserVoteType(voteType); // Optimistic update
+
     vote({ recipeId, voteType, user });
   };
 
@@ -123,26 +138,33 @@ function VoteRecipes() {
       <RecipeName>{name}</RecipeName>
       <Diet isVegetarian={diet}>{diet}</Diet>
       <VoteRecipe>
-        <VoteButtonList>
-          <li>
-            <span>Like</span>
-            <ButtonIcon
-              onClick={() => handleVote("like")}
-              disabled={isPending || hasAlreadyVoted}
-            >
-              <BiSolidLike />
-            </ButtonIcon>
-          </li>
-          <li>
-            <ButtonIcon
-              onClick={() => handleVote("dislike")}
-              disabled={isPending || hasAlreadyVoted}
-            >
-              <BiSolidDislike />
-            </ButtonIcon>
-            <span>Dislike</span>
-          </li>
-        </VoteButtonList>
+        {userVoteType ? (
+          <VoteMessage>
+            You {userVoteType === "like" ? "liked" : "disliked"} this recipe!
+          </VoteMessage>
+        ) : (
+          <VoteButtonList>
+            <li>
+              <span>Like</span>
+              <ButtonIcon
+                onClick={() => handleVote("like")}
+                disabled={isPending}
+              >
+                <BiSolidLike />
+              </ButtonIcon>
+            </li>
+            <li>
+              <ButtonIcon
+                onClick={() => handleVote("dislike")}
+                disabled={isPending}
+              >
+                <BiSolidDislike />
+              </ButtonIcon>
+              <span>Dislike</span>
+            </li>
+          </VoteButtonList>
+        )}
+
         <span>Popularity ({popularity})</span>
 
         <Button variation="secondary" onClick={() => navigate("/recipes")}>

@@ -21,7 +21,6 @@ const Avatar = styled.img`
   object-position: center;
   border-radius: 50%;
   outline: 2px solid var(--color-yellow-100);
-  /* outline: 2px solid var(--color-border); */
 `;
 
 function UserAvatar() {

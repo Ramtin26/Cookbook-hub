@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
+
 import { useSignup } from "./useSignup";
 import { useUser } from "./useUser";
-
+import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import Button from "../../ui/Button";
 
 function SignupForm() {
   const { signup, isLoading } = useSignup();
@@ -22,7 +22,8 @@ function SignupForm() {
       username: fullName,
       email,
       password,
-      savedRecipes: [],
+      hasVoted: false,
+      votedRecipes: [],
       avatarImage: "",
     };
     signup(newUser, {
@@ -42,6 +43,7 @@ function SignupForm() {
           disabled={isLoading}
           {...register("fullName", {
             required: "This field is required",
+            maxLength: 10,
           })}
         />
       </FormRow>
@@ -78,8 +80,10 @@ function SignupForm() {
           disabled={isLoading}
           {...register("password", {
             required: "This field is required",
-            minLength: 8,
-            message: "Password needs a minimum of 8 characters",
+            minLength: {
+              value: 8,
+              message: "Password needs a minimum of 8 characters",
+            },
           })}
         />
       </FormRow>

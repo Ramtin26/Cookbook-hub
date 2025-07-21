@@ -30,11 +30,14 @@ function CreateRecipeForm({ recipeToEdit = {}, onCloseModal }) {
         ? data.ingredients.split(",").map((item) => item.trim())
         : data.ingredients;
 
-    const imageFile = data.image?.[0];
-
     let base64Image = "";
-    if (imageFile) {
-      base64Image = await fileToBase64(imageFile);
+
+    if (data.image instanceof FileList && data.image[0] instanceof File) {
+      base64Image = await fileToBase64(data.image[0]);
+    } else if (typeof data.image === "string") {
+      base64Image = data.image;
+    } else {
+      base64Image = "";
     }
 
     const recipeData = {
@@ -44,9 +47,8 @@ function CreateRecipeForm({ recipeToEdit = {}, onCloseModal }) {
     };
 
     if (isEditSession)
-      // NEED TO FIX LATER (the form cannot be editing with the same image, image can change tho )
       editRecipe(
-        { newRecipeData: recipeData, id: String(editId) },
+        { newRecipe: recipeData, id: String(editId) },
         {
           onSuccess: () => {
             reset();
@@ -71,29 +73,6 @@ function CreateRecipeForm({ recipeToEdit = {}, onCloseModal }) {
       );
   }
 
-  // function onSubmit(data) {
-  //   if (isEditSession)
-  //     editRecipe(
-  //       { newRecipeData: { ...data }, id: editId },
-  //       {
-  //         onSuccess: () => {
-  //           reset();
-  //           onCloseModal?.();
-  //         },
-  //       }
-  //     );
-  //   else
-  //     createRecipe(
-  //       { id: Date.now(), ...data },
-  //       {
-  //         onSuccess: () => {
-  //           reset();
-  //           onCloseModal?.();
-  //         },
-  //       }
-  //     );
-  // }
-
   function onError(errors) {
     console.log(errors);
   }
@@ -110,6 +89,7 @@ function CreateRecipeForm({ recipeToEdit = {}, onCloseModal }) {
           disabled={isWorking}
           {...register("name", {
             required: "This field is required",
+            maxLength: 20,
           })}
         />
       </FormRow>

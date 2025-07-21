@@ -42,9 +42,9 @@ const Header = styled.header`
   }
 
   & span {
-    font-family: "Sono";
+    font-family: "Sono San-serif";
     font-size: 2rem;
-    margin-left: 4px;
+    margin-left: 7px;
   }
 `;
 
@@ -74,7 +74,6 @@ const Instructions = styled.div`
 const PrepTime = styled.div`
   display: flex;
   align-items: center;
-  /* justify-self: self-start; */
   justify-content: space-between;
   padding: 1.3rem 3rem;
   gap: 1.2rem;
@@ -146,10 +145,6 @@ function RecipeDataBox({ recipe }) {
   const hasAlreadyVoted = user.votedRecipes?.some(
     (v) => v.recipeId === recipeId
   );
-
-  /* <ButtonText onClick={() => navigate("/vote")}>
-    Go vote now!
-  </ButtonText>  */
 
   return (
     <StyledRecipeDataBox>

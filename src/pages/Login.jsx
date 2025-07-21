@@ -10,8 +10,7 @@ import styled from "styled-components";
 const LoginLayout = styled.main`
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 48rem;
-  align-content: center;
+  grid-template-columns: 60rem;
   justify-content: center;
   gap: 3.2rem;
   background-color: var(--color-yellow-50);
@@ -19,15 +18,11 @@ const LoginLayout = styled.main`
 
 const SignupLayout = styled.div`
   min-height: 100vh;
-  max-width: 50rem;
-  margin: 0 auto;
+  max-width: 53rem;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  align-content: flex-end;
   justify-content: center;
   gap: 3.2rem;
-  background-color: var(--color-yellow-50);
 `;
 
 function Login() {

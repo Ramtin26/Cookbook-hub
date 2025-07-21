@@ -1,5 +1,5 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getRecipes } from "../../services/apiRecipes";
 import { PAGE_SIZE } from "../../utils/constants";
 

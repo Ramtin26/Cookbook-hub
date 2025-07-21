@@ -1,8 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { HiMiniPencil, HiMiniTrash, HiSquare2Stack } from "react-icons/hi2";
-import { useDeleteCabin } from "./useDeleteRecipe";
-import { useCreateRecipe } from "./useCreateRecipe";
+import {
+  HiEye,
+  HiMiniPencil,
+  HiMiniTrash,
+  HiSquare2Stack,
+} from "react-icons/hi2";
 import CreateRecipeForm from "./CreateRecipeForm";
+import { useCreateRecipe } from "./useCreateRecipe";
+import { useDeleteRecipe } from "./useDeleteRecipe";
 
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Modal from "../../ui/Modal";
@@ -33,7 +38,7 @@ const Popularity = styled.div`
 `;
 
 function RecipeRow({ recipe }) {
-  const { isDeleting, deleteRecipe } = useDeleteCabin();
+  const { isDeleting, deleteRecipe } = useDeleteRecipe();
   const { isCreating, createRecipe } = useCreateRecipe();
   const navigate = useNavigate();
 

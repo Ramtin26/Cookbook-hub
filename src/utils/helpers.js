@@ -16,3 +16,15 @@ export const fileToBase64 = (file) => {
 export function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+export const getToday = function (options = {}) {
+  const today = new Date();
+
+  if (options?.end) {
+    today.setUTCHours(23, 59, 59, 999);
+  } else {
+    today.setUTCHours(0, 0, 0, 0);
+  }
+
+  return today;
+};

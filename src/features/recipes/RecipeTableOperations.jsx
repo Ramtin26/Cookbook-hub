@@ -10,7 +10,7 @@ function RecipeTableOperation() {
         options={[
           { value: "all", label: "All" },
           { value: "vegetarian", label: "Vegetarian" },
-          { value: "not-vegetarian", label: "Not Vegetarian" },
+          { value: "non-vegetarian", label: "Not Vegetarian" },
         ]}
       />
 

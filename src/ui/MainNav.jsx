@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
   HiArchiveBoxArrowDown,
   HiOutlineBookmarkSquare,
@@ -5,7 +6,6 @@ import {
   HiShare,
   HiUsers,
 } from "react-icons/hi2";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavList = styled.ul`
@@ -22,7 +22,6 @@ const StyledNavLink = styled(NavLink)`
     gap: 1.2rem;
 
     color: var(--color-yellow-600);
-    /* font-size: 1.6rem; */
     font-size: 1.8rem;
     font-weight: 500;
     padding: 1.2rem 2.4rem;

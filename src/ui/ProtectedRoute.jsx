@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useUser } from "../features/authentication/useUser";
 import Spinner from "./Spinner";
+import { useUser } from "../features/authentication/useUser";
 import styled from "styled-components";
 
 const FullPage = styled.div`

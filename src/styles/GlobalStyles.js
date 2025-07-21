@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root{
+
     &, &.light-mode{
       --color-yellow-0: #fff;
       --color-yellow-50: #fffcf1;
@@ -15,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
       --color-yellow-800: #946f00;
       --color-yellow-900: #775b00;
 
-      --color-border: #e0e0e0 ;
+      --color-border: #e0e0e0;
 
       --color-herbal-100: #d9f3d1;
       --color-herbal-700: #257a3e;
@@ -25,10 +26,10 @@ const GlobalStyles = createGlobalStyle`
       --color-indigoish-700: #1e40af;
       --color-grey-100: #f0f0f0;
       --color-grey-700: #6b7280;
-      --color-cream-100	#E0F7F1;
-      --color-cream-700	#00BFA5;
-      --color-beige-100	#FFF3E0; 
-      --color-beige-700	#FB8C00;
+      --color-cream-100: #E0F7F1;
+      --color-cream-700:	#00BFA5;
+      --color-beige-100:	#FFF3E0; 
+      --color-beige-700:	#FB8C00;
         
       --color-red-100: #fee2e2;
       --color-red-700: #b91c1c;

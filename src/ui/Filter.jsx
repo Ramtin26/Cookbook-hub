@@ -40,7 +40,6 @@ function Filter({ filterField, options }) {
 
   function handleClick(value) {
     searchParams.set(filterField, value);
-    // This block will be for pagination later
     if (searchParams.get("page")) searchParams.set("page", 1) || 1;
 
     setSearchParams(searchParams);
